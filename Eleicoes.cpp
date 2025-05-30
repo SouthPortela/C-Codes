@@ -1,0 +1,85 @@
+// Eleições
+//Election System
+//The variables in the code are in Portuguese.
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+int main() {
+    int Opcao, Manoel, Carlos, Nulo, Branco, Total;
+    float PercNulo, PercBranco;
+    char Vencedor[25];
+    Manoel = 0;
+    Carlos = 0;
+    Nulo = 0;
+    Branco = 0;
+
+    do {
+        setlocale(LC_ALL, "Portuguese");
+        printf("===== E L E I Ç Õ E S    2 0 2 5 =====\n\n");
+        printf("1. Candidato Manoel Rodrigues\n");
+        printf("2. Candidato Carlos Luz\n");
+        printf("3. Nulo\n");
+        printf("4. Branco\n");
+        printf("5. Relatório\n");
+        printf("6. Sair\n");
+        printf("\nDigite a opção: ");
+        scanf("%d", &Opcao);
+
+        switch (Opcao) {
+            case 1:
+                Manoel++;
+                break;
+            case 2:
+                Carlos++;
+                break;
+            case 3:
+                Nulo++;
+                break;
+            case 4:
+                Branco++;
+                break;
+            case 5:
+            	Total = Manoel + Carlos + Nulo + Branco;
+                if (Total == 0) {
+                    printf("\nNenhum Número foi digitado ainda!\n");
+                    system("Pause");
+                } else {
+                    if (Manoel > Carlos) {
+                        strcpy(Vencedor, "Manoel Rodrigues");
+                    } else {
+                        strcpy(Vencedor, "Carlos Luz");
+                    }
+                    PercNulo = ((float)Nulo / Total) * 100;
+                    PercBranco = ((float)Branco / Total) * 100;
+                    printf("======== R E L A T Ó R I O ========\n");
+                    printf("\nTotal de Votos: %d\n\n", Total);
+                    printf("a)Votos Manoel: %d    Votos Carlos: %d\nb)Porcentagem de votos Nulos: %.2f%%\nc)Porcentagem de votos Brancos: %.2f%%\nd)O candidato Vencedor: %s\n", Manoel, Carlos, PercNulo, PercBranco, Vencedor);
+                    system("Pause");
+                }
+                break;
+             case 6:
+             	break;
+            default:
+                printf("Opção inválida!\n");
+                system("Pause");
+        }
+        system("cls");
+    } while (Opcao != 6);
+    printf("Finalizando programa...");
+    return 0;
+/*
+     (o>
+    //\         Marcos
+    V_/_        github.com/SouthPortela
+*/
+}
+
+
+
+
+
+
+
+
