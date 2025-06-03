@@ -17,14 +17,14 @@ int main() {
 
     do {
         setlocale(LC_ALL, "Portuguese");
-        printf("E L E I Ç Õ E S    2 0 2 5\n");
+        printf("===== E L E I Ç Õ E S    2 0 2 5 =====\n\n");
         printf("1. Candidato Manoel Rodrigues\n");
         printf("2. Candidato Carlos Luz\n");
         printf("3. Nulo\n");
         printf("4. Branco\n");
         printf("5. Relatório\n");
         printf("6. Sair\n");
-        printf("Digite a opção: \n");
+        printf("\nDigite a opção: ");
         scanf("%d", &Opcao);
 
         switch (Opcao) {
@@ -43,7 +43,7 @@ int main() {
             case 5:
             	Total = Manoel + Carlos + Nulo + Branco;
                 if (Total == 0) {
-                    printf("Nenhum Número foi digitado ainda!");
+                    printf("\nNenhum Número foi digitado ainda!\n");
                     system("Pause");
                 } else {
                     if (Manoel > Carlos) {
@@ -53,18 +53,21 @@ int main() {
                     }
                     PercNulo = ((float)Nulo / Total) * 100;
                     PercBranco = ((float)Branco / Total) * 100;
-                    printf("Total de Votos: %d\n", Total);
+                    printf("======== R E L A T Ó R I O ========\n");
+                    printf("\nTotal de Votos: %d\n\n", Total);
                     printf("a)Votos Manoel: %d    Votos Carlos: %d\nb)Porcentagem de votos Nulos: %.2f%%\nc)Porcentagem de votos Brancos: %.2f%%\nd)O candidato Vencedor: %s\n", Manoel, Carlos, PercNulo, PercBranco, Vencedor);
                     system("Pause");
                 }
                 break;
+             case 6:
+             	break;
             default:
                 printf("Opção inválida!\n");
                 system("Pause");
         }
         system("cls");
     } while (Opcao != 6);
-    
+    printf("Finalizando programa...");
     return 0;
 /*
      (o>
